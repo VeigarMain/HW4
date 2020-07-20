@@ -1,18 +1,18 @@
 // Declared variables
 var score = 0;
-var questionIndex = 0;
+
 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
 var questionsDiv = document.querySelector("#questionsDiv");
 var wrapper = document.querySelector("#wrapper");
 
-
+var questionIndex = 0;
 var secondsLeft = 76;
 
 var holdInterval = 0;
 
-var penalty = 10;
+
 
 var ulCreate = document.createElement("ul");
 
@@ -81,7 +81,7 @@ function compare(event) {
     if (questionIndex >= questions.length) {
         
         allDone();
-        createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+        createDiv.textContent = "Quiz Ends!" + " " + "you now got  " + score + "/" + questions.length + " Correct!";
     } else {
         render(questionIndex);
     }
@@ -96,7 +96,7 @@ function allDone() {
    
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
-    createH1.textContent = "All Done!"
+    createH1.textContent = "Finished!"
 
 
 
@@ -115,7 +115,7 @@ function allDone() {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
         clearInterval(holdInterval);
-        createP.textContent = "Your final score is: " + timeRemaining;
+        createP.textContent = "Final score is: " + timeRemaining;
 
         questionsDiv.appendChild(createP2);
     }
